@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Guest implements Serializable {
-    private Integer g_userid;//编号id
+    private Integer guestid;//编号id
     private String g_username;//游客用户名
     private String g_userfrom;//来自哪里
     private String g_sex;//性别
@@ -19,7 +19,7 @@ public class Guest implements Serializable {
     @Override
     public String toString() {
         return "Guest{" +
-                "g_userid=" + g_userid +
+                "guestid=" + guestid +
                 ", g_username='" + g_username + '\'' +
                 ", g_userfrom='" + g_userfrom + '\'' +
                 ", g_sex='" + g_sex + '\'' +
@@ -33,12 +33,12 @@ public class Guest implements Serializable {
                 '}';
     }
 
-    public Integer getG_userid() {
-        return g_userid;
+    public Integer getGuestid() {
+        return guestid;
     }
 
-    public void setG_userid(Integer g_userid) {
-        this.g_userid = g_userid;
+    public void setGuestid(Integer guestid) {
+        this.guestid = guestid;
     }
 
     public String getG_username() {
@@ -121,9 +121,9 @@ public class Guest implements Serializable {
         this.g_replytime = g_replytime;
     }
 
-    public Guest(Integer g_userid, String g_username, String g_userfrom, String g_sex, String g_qq, String g_email, String g_content, String g_reply, String g_imageAddress, Date g_posttime, Date g_replytime) {
+    public Guest(Integer guestid, String g_username, String g_userfrom, String g_sex, String g_qq, String g_email, String g_content, String g_reply, String g_imageAddress, Date g_posttime, Date g_replytime) {
 
-        this.g_userid = g_userid;
+        this.guestid = guestid;
         this.g_username = g_username;
         this.g_userfrom = g_userfrom;
         this.g_sex = g_sex;
@@ -150,9 +150,9 @@ public class Guest implements Serializable {
         this.g_replytime = g_replytime;
     }
 
-    public Guest(Integer g_userid) {
+    public Guest(Integer guestid) {
 
-        this.g_userid = g_userid;
+        this.guestid = guestid;
     }
 
     public Guest() {
