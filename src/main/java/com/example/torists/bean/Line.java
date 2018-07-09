@@ -13,21 +13,27 @@ public class Line implements Serializable {
     private double line_price;//线路价格
     private String line_pic;//线路图片
     private String line_picname;//线路图片名称
+    private Line_ding line_ding;
 
-    @Override
-    public String toString() {
-        return "Line{" +
-                "line_id=" + line_id +
-                ", line_type='" + line_type + '\'' +
-                ", line_name='" + line_name + '\'' +
-                ", line_xingcheng='" + line_xingcheng + '\'' +
-                ", line_baojia='" + line_baojia + '\'' +
-                ", line_anpai='" + line_anpai + '\'' +
-                ", line_shuoming='" + line_shuoming + '\'' +
-                ", line_price=" + line_price +
-                ", line_pic='" + line_pic + '\'' +
-                ", line_picname='" + line_picname + '\'' +
-                '}';
+    public Line() {
+    }
+
+    public Line(Integer line_id) {
+        this.line_id = line_id;
+    }
+
+    public Line(Integer line_id, String line_type, String line_name, String line_xingcheng, String line_baojia, String line_anpai, String line_shuoming, double line_price, String line_pic, String line_picname, Line_ding line_ding) {
+        this.line_id = line_id;
+        this.line_type = line_type;
+        this.line_name = line_name;
+        this.line_xingcheng = line_xingcheng;
+        this.line_baojia = line_baojia;
+        this.line_anpai = line_anpai;
+        this.line_shuoming = line_shuoming;
+        this.line_price = line_price;
+        this.line_pic = line_pic;
+        this.line_picname = line_picname;
+        this.line_ding = line_ding;
     }
 
     public Integer getLine_id() {
@@ -110,39 +116,28 @@ public class Line implements Serializable {
         this.line_picname = line_picname;
     }
 
-    public Line(Integer line_id, String line_type, String line_name, String line_xingcheng, String line_baojia, String line_anpai, String line_shuoming, double line_price, String line_pic, String line_picname) {
-
-        this.line_id = line_id;
-        this.line_type = line_type;
-        this.line_name = line_name;
-        this.line_xingcheng = line_xingcheng;
-        this.line_baojia = line_baojia;
-        this.line_anpai = line_anpai;
-        this.line_shuoming = line_shuoming;
-        this.line_price = line_price;
-        this.line_pic = line_pic;
-        this.line_picname = line_picname;
+    public Line_ding getLine_ding() {
+        return line_ding;
     }
 
-    public Line(String line_type, String line_name, String line_xingcheng, String line_baojia, String line_anpai, String line_shuoming, double line_price, String line_pic, String line_picname) {
-
-        this.line_type = line_type;
-        this.line_name = line_name;
-        this.line_xingcheng = line_xingcheng;
-        this.line_baojia = line_baojia;
-        this.line_anpai = line_anpai;
-        this.line_shuoming = line_shuoming;
-        this.line_price = line_price;
-        this.line_pic = line_pic;
-        this.line_picname = line_picname;
+    public void setLine_ding(Line_ding line_ding) {
+        this.line_ding = line_ding;
     }
 
-    public Line(Integer line_id) {
-
-        this.line_id = line_id;
-    }
-
-    public Line() {
-
+    @Override
+    public String toString() {
+        return "Line{" +
+                "line_id=" + line_id +
+                ", line_type='" + line_type + '\'' +
+                ", line_name='" + line_name + '\'' +
+                ", line_xingcheng='" + line_xingcheng + '\'' +
+                ", line_baojia='" + line_baojia + '\'' +
+                ", line_anpai='" + line_anpai + '\'' +
+                ", line_shuoming='" + line_shuoming + '\'' +
+                ", line_price=" + line_price +
+                ", line_pic='" + line_pic + '\'' +
+                ", line_picname='" + line_picname + '\'' +
+                ", line_ding=" + line_ding +
+                '}';
     }
 }
