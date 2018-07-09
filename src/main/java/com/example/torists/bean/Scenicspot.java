@@ -7,16 +7,22 @@ public class Scenicspot implements Serializable {
     private Integer scenicspot_id;//景点编号id
     private String scenicspot_name;//景点名称
     private String scenicspot_content;//景点介绍
-    private Date add_date;//添加时间
+    private String add_date;//添加时间
+    private Scenicspotpic scenicspotpic;
 
-    @Override
-    public String toString() {
-        return "Scenicspot{" +
-                "scenicspot_id=" + scenicspot_id +
-                ", scenicspot_name='" + scenicspot_name + '\'' +
-                ", scenicspot_content='" + scenicspot_content + '\'' +
-                ", add_date=" + add_date +
-                '}';
+    public Scenicspot() {
+    }
+
+    public Scenicspot(Integer scenicspot_id) {
+        this.scenicspot_id = scenicspot_id;
+    }
+
+    public Scenicspot(Integer scenicspot_id, String scenicspot_name, String scenicspot_content, String add_date, Scenicspotpic scenicspotpic) {
+        this.scenicspot_id = scenicspot_id;
+        this.scenicspot_name = scenicspot_name;
+        this.scenicspot_content = scenicspot_content;
+        this.add_date = add_date;
+        this.scenicspotpic = scenicspotpic;
     }
 
     public Integer getScenicspot_id() {
@@ -43,35 +49,30 @@ public class Scenicspot implements Serializable {
         this.scenicspot_content = scenicspot_content;
     }
 
-    public Date getAdd_date() {
+    public String getAdd_date() {
         return add_date;
     }
 
-    public void setAdd_date(Date add_date) {
+    public void setAdd_date(String add_date) {
         this.add_date = add_date;
     }
 
-    public Scenicspot(Integer scenicspot_id, String scenicspot_name, String scenicspot_content, Date add_date) {
-
-        this.scenicspot_id = scenicspot_id;
-        this.scenicspot_name = scenicspot_name;
-        this.scenicspot_content = scenicspot_content;
-        this.add_date = add_date;
+    public Scenicspotpic getScenicspotpic() {
+        return scenicspotpic;
     }
 
-    public Scenicspot(String scenicspot_name, String scenicspot_content, Date add_date) {
-
-        this.scenicspot_name = scenicspot_name;
-        this.scenicspot_content = scenicspot_content;
-        this.add_date = add_date;
+    public void setScenicspotpic(Scenicspotpic scenicspotpic) {
+        this.scenicspotpic = scenicspotpic;
     }
 
-    public Scenicspot(Integer scenicspot_id) {
-
-        this.scenicspot_id = scenicspot_id;
-    }
-
-    public Scenicspot() {
-
+    @Override
+    public String toString() {
+        return "Scenicspot{" +
+                "scenicspot_id=" + scenicspot_id +
+                ", scenicspot_name='" + scenicspot_name + '\'' +
+                ", scenicspot_content='" + scenicspot_content + '\'' +
+                ", add_date='" + add_date + '\'' +
+                ", scenicspotpic=" + scenicspotpic +
+                '}';
     }
 }

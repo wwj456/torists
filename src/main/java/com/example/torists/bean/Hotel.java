@@ -13,21 +13,27 @@ public class Hotel implements Serializable {
     private String hotel_content;//酒店介绍
     private String hotel_zwjg;//酒店周围景观介绍
     private double hotel_price;//酒店价格
+    private Hotel_ding hotel_ding;
 
-    @Override
-    public String toString() {
-        return "Hotel{" +
-                "hotel_id=" + hotel_id +
-                ", hotel_name='" + hotel_name + '\'' +
-                ", hotel_position='" + hotel_position + '\'' +
-                ", hotel_grade='" + hotel_grade + '\'' +
-                ", hotel_pic1='" + hotel_pic1 + '\'' +
-                ", hotel_pic2='" + hotel_pic2 + '\'' +
-                ", hotel_pic3='" + hotel_pic3 + '\'' +
-                ", hotel_content='" + hotel_content + '\'' +
-                ", hotel_zwjg='" + hotel_zwjg + '\'' +
-                ", hotel_price=" + hotel_price +
-                '}';
+    public Hotel() {
+    }
+
+    public Hotel(Integer hotel_id) {
+        this.hotel_id = hotel_id;
+    }
+
+    public Hotel(Integer hotel_id, String hotel_name, String hotel_position, String hotel_grade, String hotel_pic1, String hotel_pic2, String hotel_pic3, String hotel_content, String hotel_zwjg, double hotel_price, Hotel_ding hotel_ding) {
+        this.hotel_id = hotel_id;
+        this.hotel_name = hotel_name;
+        this.hotel_position = hotel_position;
+        this.hotel_grade = hotel_grade;
+        this.hotel_pic1 = hotel_pic1;
+        this.hotel_pic2 = hotel_pic2;
+        this.hotel_pic3 = hotel_pic3;
+        this.hotel_content = hotel_content;
+        this.hotel_zwjg = hotel_zwjg;
+        this.hotel_price = hotel_price;
+        this.hotel_ding = hotel_ding;
     }
 
     public Integer getHotel_id() {
@@ -110,39 +116,28 @@ public class Hotel implements Serializable {
         this.hotel_price = hotel_price;
     }
 
-    public Hotel(Integer hotel_id, String hotel_name, String hotel_position, String hotel_grade, String hotel_pic1, String hotel_pic2, String hotel_pic3, String hotel_content, String hotel_zwjg, double hotel_price) {
-
-        this.hotel_id = hotel_id;
-        this.hotel_name = hotel_name;
-        this.hotel_position = hotel_position;
-        this.hotel_grade = hotel_grade;
-        this.hotel_pic1 = hotel_pic1;
-        this.hotel_pic2 = hotel_pic2;
-        this.hotel_pic3 = hotel_pic3;
-        this.hotel_content = hotel_content;
-        this.hotel_zwjg = hotel_zwjg;
-        this.hotel_price = hotel_price;
+    public Hotel_ding getHotel_ding() {
+        return hotel_ding;
     }
 
-    public Hotel(String hotel_name, String hotel_position, String hotel_grade, String hotel_pic1, String hotel_pic2, String hotel_pic3, String hotel_content, String hotel_zwjg, double hotel_price) {
-
-        this.hotel_name = hotel_name;
-        this.hotel_position = hotel_position;
-        this.hotel_grade = hotel_grade;
-        this.hotel_pic1 = hotel_pic1;
-        this.hotel_pic2 = hotel_pic2;
-        this.hotel_pic3 = hotel_pic3;
-        this.hotel_content = hotel_content;
-        this.hotel_zwjg = hotel_zwjg;
-        this.hotel_price = hotel_price;
+    public void setHotel_ding(Hotel_ding hotel_ding) {
+        this.hotel_ding = hotel_ding;
     }
 
-    public Hotel(Integer hotel_id) {
-
-        this.hotel_id = hotel_id;
-    }
-
-    public Hotel() {
-
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "hotel_id=" + hotel_id +
+                ", hotel_name='" + hotel_name + '\'' +
+                ", hotel_position='" + hotel_position + '\'' +
+                ", hotel_grade='" + hotel_grade + '\'' +
+                ", hotel_pic1='" + hotel_pic1 + '\'' +
+                ", hotel_pic2='" + hotel_pic2 + '\'' +
+                ", hotel_pic3='" + hotel_pic3 + '\'' +
+                ", hotel_content='" + hotel_content + '\'' +
+                ", hotel_zwjg='" + hotel_zwjg + '\'' +
+                ", hotel_price=" + hotel_price +
+                ", hotel_ding=" + hotel_ding +
+                '}';
     }
 }
