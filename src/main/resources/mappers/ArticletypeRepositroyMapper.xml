@@ -6,6 +6,13 @@
     <resultMap id="articletypeResultMap" type="com.example.torists.bean.Articletype">
     <id column="articletype_id" property="articletype_id"/>
     <result column="articletype_name" property="articletype_name"/>
+        <association property="article" javaType="com.example.torists.bean.Articletype">
+            <id column="article_id" property="article_id"/>
+            <result column="" property=""/>
+            <result column="" property=""/>
+            <result column="" property=""/>
+            <result column="" property=""/>
+        </association>
 </resultMap>
     <select id="findAllArticletype" resultMap="articletypeResultMap">
         select * from articletype where id=#{articletype_id}

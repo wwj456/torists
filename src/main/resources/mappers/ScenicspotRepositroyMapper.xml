@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.torists.repositroy.ScenicspotRepositroy">
+    <resultMap id="scenicspotResultMap" type="com.example.torists.bean.Scenicspot">
+        <id column="scenicspot_id" property="scenicspot_id"/>
+        <result column="scenicspot_name" property="scenicspot_name"/>
+        <result column="scenicspot_content" property="scenicspot_content"/>
+        <result column="add_date" property="add_date"/>
+        <association property="scenicspotpic" javaType="com.example.torists.bean.Scenicspot">
+            <id column="pic_id" property="pic_id"/>
+            <result column="pic_url" property="pic_url"/>
+            <result column="pic_name" property="pic_name"/>
+            <result column="add_date" property="add_date"/>
+            <result column="scenicspot_id" property="scenicspot_id"/>
+        </association>
+    </resultMap>
+    <select id="findAllScenicspot" resultMap="scenicspotResultMap">
+        select * from scenicspot where scenicspot_id=#{scenicspot_id}
+    </select>
+    <update id="updateScenicspot">
+        update scenicspot set scenicspot_name = #{s.scenicspot_name}
+                             ,scenicspot_content = #{s.scenicspot_content}
+                             ,add_date = #{s.add_date}
+        where scenicspot_id = #{s.scenicspot_id}
+    </update>
+    <insert id="addScenicspot">
+         insert into scenicspot(scenicspot_name,scenicspot_content,add_date)
+         values (#{s.scenicspot_name},#{s.scenicspot_content},#{s.add_date})
+    </insert>
+    <delete id="deleteScenicspot">
+        delete from line where scenicspot_id = #{s.scenicspot_id}
+    </delete>
+</mapper>
+
