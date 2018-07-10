@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.torists.repositroy.Hotel_dingRepositroy">
+<resultMap id="hotel_dingResultMap" type="com.example.torists.bean.Hotel_ding">
+    <id column="hoteldd_id" property="hoteldd_id"/>
+    <result column="hoteldd_name" property="hoteldd_name"/>
+    <result column="hoteldd_fitype" property="hoteldd_fitype"/>
+    <result column="hoteldd_fjsum" property="hoteldd_fjsum"/>
+    <result column="hoteldd_joinpeople" property="hoteldd_joinpeople"/>
+    <result column="hoteldd_begintim" property="hoteldd_begintim"/>
+    <result column="hoteldd_endtime" property="hoteldd_endtime"/>
+    <result column="admin_action" property="admin_action"/>
+</resultMap>
+<select id="findAllHotel_ding" resultMap="hotel_dingResultMap">
+        select * from Hotel_ding
+    </select>
+<update id="updateHotel_ding">
+        update Hotel_ding set hoteldd_name = #{h_d.hoteldd_name}
+                             ,hoteldd_fitype = #{h_d.hoteldd_fitype}
+                             ,hoteldd_fjsum = #{h_d.hoteldd_fjsum}
+                             ,hoteldd_joinpeople = #{h_d.hoteldd_joinpeople}
+                             ,hoteldd_begintim = #{h_d.hoteldd_begintim}
+                             ,hoteldd_endtime = #{h_d.hoteldd_endtime}
+                             ,admin_action = #{h_d.admin_action}
+        where hoteldd_id = #{h_d.hoteldd_id}
+    </update>
+<insert id="addHootel_ding">
+         insert into Hotel_ding(hoteldd_name,hoteldd_fitype,hoteldd_fjsum,hoteldd_joinpeople,hoteldd_begintim,hoteldd_endtime,admin_action)
+         values (#{h_d.hoteldd_name},#{h_d.hoteldd_fitype},#{h_d.hoteldd_fjsum},#{h_d.hoteldd_joinpeople},#{h_d.hoteldd_begintim},#{h_d.hoteldd_endtime},#{h_d.admin_action})
+    </insert>
+<delete id="deleteHotel_ding">
+        delete from Hotel_ding where hoteldd_id = #{h_d.hoteldd_id}
+    </delete>
+</mapper>

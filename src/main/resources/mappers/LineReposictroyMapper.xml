@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.torists.repositroy.LineReposictroy">
+    <resultMap id="lineResultMap" type="com.example.torists.bean.Line">
+        <id column=" line_id" property=" line_id"/>
+        <result column="line_type" property="line_type"/>
+        <result column="line_name" property="line_name"/>
+        <result column="line_xingcheng" property="line_xingcheng"/>
+        <result column="line_baojia" property="line_baojia"/>
+        <result column="line_anpai" property="line_anpai"/>
+        <result column="line_shuoming" property="line_shuoming"/>
+        <result column="line_price" property="line_price"/>
+        <result column="line_pic" property="line_pic"/>
+        <result column="add_date" property="add_date"/>
+        <result column="line_picname" property="line_picname"/>
+    </resultMap>
+    <select id="findAllLine" resultMap="lineResultMap">
+        select * from line where line_id=#{line_id}
+    </select>
+    <update id="updateHptel">
+        update line set line_name = #{l.lined_name}
+                             ,line_xingcheng = #{l.line_xingcheng}
+                             ,line_baojia = #{l.line_baojia}
+                             ,line_anpai = #{l.line_anpai}
+                             ,line_shuoming = #{l.line_shuoming}
+                             ,line_price = #{l.line_price}
+                             ,line_pic = #{l.line_pic}
+                             ,add_date=#{l.add_date}
+                             ,line_picname=#{l.line_picname}li
+        where lined_id = #{l.line_id}
+    </update>
+    <insert id="addHotel">
+         insert into line(line_name,line_xingcheng,line_baojia,line_anpai,line_shuoming,line_price,line_pic,add_date,line_picname)
+         values (#{l.line_name},#{l.line_xingcheng},#{l.line_baojia},#{l.line_anpai},#{l.line_shuoming},#{l.line_price},#{l.line_pic},#{l.add_date},#{l.line_picname})
+    </insert>
+    <delete id="deleteHotel">
+        delete from line where line_id=#{l.line_id}
+    </delete>
+</mapper>

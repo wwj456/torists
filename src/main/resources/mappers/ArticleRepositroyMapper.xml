@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.torists.repositroy.ArticleRepositroy">
+    <resultMap id="articleResultMap" type="com.example.torists.bean.Article">
+        <id column="article_id" property="article_id"/>
+        <result column="article_title" property="article_title"/>
+        <result column="articel_content" property="articel_content"/>
+        <result column="articel_author" property="articel_author"/>
+        <result column="add_date" property="add_date"/>
+        <result column="articletype_id" property="articletype_id"/>
+    </resultMap>
+    <select id="findAllArticle" resultMap="articleResultMap">
+        select * where article_id=#{article_id}
+    </select>
+    <insert id="addArticle" parameterType="com.example.torists.bean.Article">
+        insert into article(article_title,articel_content,articel_author,add_date,articletype_id)
+         values (#{article.article_title},#{article.articel_content},#{article.articel_author},#{article.add_date},#{article.articletype_id})
+    </insert>
+    <update id="updateArticle">
+        update article set article_title=#{article.article_title},articel_content=#{article.articel_content},articel_author=#{article.articel_author},add_date=#{article.add_date},articletype_id=#{article.articletype_id}
+        where article_id=#{article.article_id}
+    </update>
+    <delete id="deleteArticle">
+        delete from article where article_id=#{article_id.article_id}
+    </delete>
+    <select id="findArticlebyarticletype_id" resultMap="articleResultMap">
+         select * where articletype_id=#{atype_id.articletype_id}
+    </select>
+</mapper>
