@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.torists.repositroy.TouristsReposictroy">
+    <resultMap id="TouristsResultMap" type="com.example.torists.bean.Tourists">
+        <id column="t_id" property="t_id"/>
+        <result column="t_name" property="t_name"/>
+        <result column="t_tel" property="t_tel"/>
+        <result column="t_icd" property="t_icd"/>
+    </resultMap>
+    <select id="findAlltourists" resultMap="TouristsResultMap">
+        select * from tourists
+    </select>
+    <update id="updateTourists">
+        update tourists set t_name = #{tourists.t_name}
+                             ,t_tel = #{tourists.t_tel}
+                             ,t_icd = #{tourists.t_icd}
+        where t_id = #{tourists.t_id}
+    </update>
+    <insert id="addTourists">
+         insert into tourists(t_name,t_tel,t_icd)
+         values (#{tourists.t_name},#{tourists.t_tel}#{tourists.t_icd})
+    </insert>
+    <delete id="deleteTourists">
+        delete from tourists where t_id = #{tourists.order_id}
+    </delete>
+</mapper>
+
