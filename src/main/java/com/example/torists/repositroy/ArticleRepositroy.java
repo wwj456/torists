@@ -2,6 +2,7 @@ package com.example.torists.repositroy;
 
 import com.example.torists.bean.Article;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
@@ -18,26 +19,21 @@ public interface ArticleRepositroy {
      * @param article
      * @return
      */
-    int addArticle(Article article);
+    int addArticle(@Param("a") Article article);
 
     /**
      * 修改新闻
      * @param article
      * @return
      */
-    int updateArticle(Article article);
+    int updateArticle(@Param("a")Article article);
 
     /**
      * 删除新闻
      * @param article_id
      * @return
      */
-    int deleteArticle(int article_id);
+    int deleteArticle(@Param("a")int article_id);
 
-    /**
-     * 根据新闻类型查询新闻
-     * @param articletype_id
-     * @return
-     */
-    List<Article> findArticlebyarticletype_id(int articletype_id);
+
 }

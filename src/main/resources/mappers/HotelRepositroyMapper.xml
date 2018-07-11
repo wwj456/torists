@@ -4,33 +4,39 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.example.torists.repositroy.Hotel_dingRepositroy">
         <resultMap id="hotel_dingResultMap" type="com.example.torists.bean.Hotel_ding">
-            <id column="hoteldd_id" property="hoteldd_id"/>
-            <result column="hoteldd_name" property="hoteldd_name"/>
-            <result column="hoteldd_fitype" property="hoteldd_fitype"/>
-            <result column="hoteldd_fjsum" property="hoteldd_fjsum"/>
-            <result column="hoteldd_joinpeople" property="hoteldd_joinpeople"/>
-            <result column="hoteldd_begintim" property="hoteldd_begintim"/>
-            <result column="hoteldd_endtime" property="hoteldd_endtime"/>
-            <result column="admin_action" property="admin_action"/>
+            <id column="hotel_id" property="hotel_id"/>
+            <result column="hotel_name" property="hotel_name"/>
+            <result column="hotel_position" property="hotel_position"/>
+            <result column="hotel_pic" property="hotel_pic"/>
+            <result column="hotel_content" property="hotel_content"/>
+            <result column="hotel_price" property="hotel_price"/>
+            <result column="order_id" property="order_id"/>
+            <association property="hotel_ding" javaType="com.example.torists.bean.Hotel_ding">
+                <id column="order_id" property="order_id"/>
+                <result column="hoteldd_name" property="hoteldd_name"/>
+                <result column="hoteldd_fitype" property="hoteldd_fitype"/>
+                <result column="hoteldd_begintim" property="hoteldd_begintim"/>
+                <result column="hoteldd_endtime" property="hoteldd_endtime"/>
+                <result column="admin_action" property="admin_action"/>
+            </association>
         </resultMap>
-    <select id="findAllHotel_ding" resultMap="hotel_dingResultMap">
-        select * from Hotel_ding where hoteldd_id=#{hoteldd_id}
+    <select id="findAllHotel" resultMap="hotelResultMap">
+        select * from Hotel where hotel_id=#{hotel_id}
     </select>
-    <update id="updateHotel_ding">
-        update Hotel_ding set hoteldd_name = #{h_d.hoteldd_name}
-                             ,hoteldd_fitype = #{h_d.hoteldd_fitype}
-                             ,hoteldd_fjsum = #{h_d.hoteldd_fjsum}
-                             ,hoteldd_joinpeople = #{h_d.hoteldd_joinpeople}
-                             ,hoteldd_begintim = #{h_d.hoteldd_begintim}
-                             ,hoteldd_endtime = #{h_d.hoteldd_endtime}
-                             ,admin_action = #{h_d.admin_action}
-        where hoteldd_id = #{h_d.hoteldd_id}
+    <update id="updateHotel">
+        update Hotel set hoteld_name = #{h.hotel_name}
+                             ,hotel_position = #{h.hotel_position}
+                             ,hotel_pic = #{h.hotel_pic}
+                             ,hotel_content = #{h.hotel_content}
+                             ,hotel_price = #{h.hotel_price}
+                             ,order_id = #{h.order_id}
+        where hotel_id=#{h.hotel_id}
     </update>
-    <insert id="addHootel_ding">
-         insert into Hotel_ding(hoteldd_name,hoteldd_fitype,hoteldd_fjsum,hoteldd_joinpeople,hoteldd_begintim,hoteldd_endtime,admin_action)
-         values (#{h_d.hoteldd_name},#{h_d.hoteldd_fitype},#{h_d.hoteldd_fjsum},#{h_d.hoteldd_joinpeople},#{h_d.hoteldd_begintim},#{h_d.hoteldd_endtime},#{h_d.admin_action})
+    <insert id="addHootel">
+         insert into Hotel(hoteld_name,hotel_position,hotel_pic,hotel_content,hotel_price,order_id)
+         values (#{h.hotel_name},#{h.hotel_position},#{h.hotel_pic},#{h.hotel_content},#{h.hotel_price},#{h.order_id})
     </insert>
-    <delete id="deleteHotel_ding">
-        delete from Hotel_ding where hoteldd_id = #{h_d.hoteldd_id}
+    <delete id="deleteHotel">
+        delete from Hotel where hotel_id=#{h.hotel_id}
     </delete>
 </mapper>

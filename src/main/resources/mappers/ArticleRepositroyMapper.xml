@@ -14,16 +14,13 @@
     </select>
     <insert id="addArticle" parameterType="com.example.torists.bean.Article">
         insert into article(article_title,articel_content,add_date)
-         values (#{article.article_title},#{article.articel_content},#{article.add_date})
+         values (#{a.article_title},#{a.articel_content},#{a.add_date})
     </insert>
     <update id="updateArticle">
-        update article set article_title=#{article.article_title},articel_content=#{article.articel_content},add_date=#{article.add_date}}
-        where article_id=#{article.article_id}
+        update article set article_title=#{a.article_title},articel_content=#{a.articel_content},add_date=#{a.add_date}
+        where article_id=#{a.article_id}
     </update>
     <delete id="deleteArticle">
-        delete from article where article_id=#{article_id.article_id}
+        delete from article where article_id=#{a.article_id}
     </delete>
-    <select id="findArticlebyarticletype_id" resultMap="articleResultMap">
-         select * where articletype_id=#{atype_id.articletype_id}
-    </select>
 </mapper>

@@ -6,12 +6,11 @@ public class Hotel implements Serializable {
     private Integer hotel_id;//酒店编号id
     private String hotel_name;//酒店名称
     private String hotel_position;//酒店位置
-
     private String hotel_pic;//酒店图片
     private String hotel_content;//酒店介绍
     private double hotel_price;//酒店价格
     private Integer order_id;//酒店订单id
-    private Hotel_ding hotel_ding;//酒店订单所属对象内容
+    private Hotel_ding hotel_ding;//酒店所属对象内容
 
     public Hotel() {
     }
