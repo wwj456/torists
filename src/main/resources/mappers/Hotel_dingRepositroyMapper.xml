@@ -12,10 +12,10 @@
     <result column="admin_action" property="admin_action"/>
 </resultMap>
 <select id="findAllHotel_ding" resultMap="hotel_dingResultMap">
-        select * from Hotel_ding
+        select * from hotel_ding
     </select>
 <update id="updateHotel_ding">
-        update Hotel_ding set hoteldd_name = #{h_d.hoteldd_name}
+        update hotel_ding set hoteldd_name = #{h_d.hoteldd_name}
                              ,hoteldd_fitype = #{h_d.hoteldd_fitype}
                              ,hoteldd_begintim = #{h_d.hoteldd_begintim}
                              ,hoteldd_endtime = #{h_d.hoteldd_endtime}
@@ -23,10 +23,10 @@
         where order_id = #{h_d.order_id}
     </update>
 <insert id="addHootel_ding">
-         insert into Hotel_ding(hoteldd_name,hoteldd_fitype,hoteldd_begintim,hoteldd_endtime,admin_action)
+         insert into hotel_ding(hoteldd_name,hoteldd_fitype,hoteldd_begintim,hoteldd_endtime,admin_action)
          values (#{h_d.hoteldd_name},#{h_d.hoteldd_fitype}#{h_d.hoteldd_begintim},#{h_d.hoteldd_endtime},#{h_d.admin_action})
     </insert>
 <delete id="deleteHotel_ding">
-        delete from Hotel_ding where order_id = #{h_d.order_id}
+        delete from hotel_ding where order_id = #{h_d.order_id}
     </delete>
 </mapper>
