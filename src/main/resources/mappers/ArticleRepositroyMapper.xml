@@ -7,19 +7,17 @@
         <id column="article_id" property="article_id"/>
         <result column="article_title" property="article_title"/>
         <result column="articel_content" property="articel_content"/>
-        <result column="articel_author" property="articel_author"/>
         <result column="add_date" property="add_date"/>
-        <result column="articletype_id" property="articletype_id"/>
     </resultMap>
     <select id="findAllArticle" resultMap="articleResultMap">
         select * where article_id=#{article_id}
     </select>
     <insert id="addArticle" parameterType="com.example.torists.bean.Article">
-        insert into article(article_title,articel_content,articel_author,add_date,articletype_id)
-         values (#{article.article_title},#{article.articel_content},#{article.articel_author},#{article.add_date},#{article.articletype_id})
+        insert into article(article_title,articel_content,add_date)
+         values (#{article.article_title},#{article.articel_content},#{article.add_date})
     </insert>
     <update id="updateArticle">
-        update article set article_title=#{article.article_title},articel_content=#{article.articel_content},articel_author=#{article.articel_author},add_date=#{article.add_date},articletype_id=#{article.articletype_id}
+        update article set article_title=#{article.article_title},articel_content=#{article.articel_content},add_date=#{article.add_date}}
         where article_id=#{article.article_id}
     </update>
     <delete id="deleteArticle">

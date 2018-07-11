@@ -4,41 +4,40 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Guest implements Serializable {
-    private Integer guestid;//编号id
-    private String g_username;//游客用户名
-    private String g_userfrom;//来自哪里
+    private Integer g_id;//编号id
+    private String g_username;//用户名
     private String g_sex;//性别
-    private String g_qq;//qq
-    private String g_email;//eamil
     private String g_content;//留言内容
     private String g_reply;//管理员回复
-    private String g_imageAddress;//头像
     private Date g_posttime;//留言时间
     private Date g_replytime;//回复时间
+    private Integer t_id;//客户id
+    private Tourists tourists;//留言客户所属对象内容
+    public Guest() {
+
+    }
 
     @Override
     public String toString() {
         return "Guest{" +
-                "guestid=" + guestid +
+                "g_id=" + g_id +
                 ", g_username='" + g_username + '\'' +
-                ", g_userfrom='" + g_userfrom + '\'' +
                 ", g_sex='" + g_sex + '\'' +
-                ", g_qq='" + g_qq + '\'' +
-                ", g_email='" + g_email + '\'' +
                 ", g_content='" + g_content + '\'' +
                 ", g_reply='" + g_reply + '\'' +
-                ", g_imageAddress='" + g_imageAddress + '\'' +
                 ", g_posttime=" + g_posttime +
                 ", g_replytime=" + g_replytime +
+                ", t_id=" + t_id +
+                ", tourists=" + tourists +
                 '}';
     }
 
-    public Integer getGuestid() {
-        return guestid;
+    public Integer getG_id() {
+        return g_id;
     }
 
-    public void setGuestid(Integer guestid) {
-        this.guestid = guestid;
+    public void setG_id(Integer g_id) {
+        this.g_id = g_id;
     }
 
     public String getG_username() {
@@ -49,36 +48,12 @@ public class Guest implements Serializable {
         this.g_username = g_username;
     }
 
-    public String getG_userfrom() {
-        return g_userfrom;
-    }
-
-    public void setG_userfrom(String g_userfrom) {
-        this.g_userfrom = g_userfrom;
-    }
-
     public String getG_sex() {
         return g_sex;
     }
 
     public void setG_sex(String g_sex) {
         this.g_sex = g_sex;
-    }
-
-    public String getG_qq() {
-        return g_qq;
-    }
-
-    public void setG_qq(String g_qq) {
-        this.g_qq = g_qq;
-    }
-
-    public String getG_email() {
-        return g_email;
-    }
-
-    public void setG_email(String g_email) {
-        this.g_email = g_email;
     }
 
     public String getG_content() {
@@ -97,14 +72,6 @@ public class Guest implements Serializable {
         this.g_reply = g_reply;
     }
 
-    public String getG_imageAddress() {
-        return g_imageAddress;
-    }
-
-    public void setG_imageAddress(String g_imageAddress) {
-        this.g_imageAddress = g_imageAddress;
-    }
-
     public Date getG_posttime() {
         return g_posttime;
     }
@@ -121,41 +88,49 @@ public class Guest implements Serializable {
         this.g_replytime = g_replytime;
     }
 
-    public Guest(Integer guestid, String g_username, String g_userfrom, String g_sex, String g_qq, String g_email, String g_content, String g_reply, String g_imageAddress, Date g_posttime, Date g_replytime) {
+    public Integer getT_id() {
+        return t_id;
+    }
 
-        this.guestid = guestid;
+    public void setT_id(Integer t_id) {
+        this.t_id = t_id;
+    }
+
+    public Tourists getTourists() {
+        return tourists;
+    }
+
+    public void setTourists(Tourists tourists) {
+        this.tourists = tourists;
+    }
+
+    public Guest(Integer g_id, String g_username, String g_sex, String g_content, String g_reply, Date g_posttime, Date g_replytime, Integer t_id, Tourists tourists) {
+
+        this.g_id = g_id;
         this.g_username = g_username;
-        this.g_userfrom = g_userfrom;
         this.g_sex = g_sex;
-        this.g_qq = g_qq;
-        this.g_email = g_email;
         this.g_content = g_content;
         this.g_reply = g_reply;
-        this.g_imageAddress = g_imageAddress;
         this.g_posttime = g_posttime;
         this.g_replytime = g_replytime;
+        this.t_id = t_id;
+        this.tourists = tourists;
     }
 
-    public Guest(String g_username, String g_userfrom, String g_sex, String g_qq, String g_email, String g_content, String g_reply, String g_imageAddress, Date g_posttime, Date g_replytime) {
+    public Guest(String g_username, String g_sex, String g_content, String g_reply, Date g_posttime, Date g_replytime, Integer t_id, Tourists tourists) {
 
         this.g_username = g_username;
-        this.g_userfrom = g_userfrom;
         this.g_sex = g_sex;
-        this.g_qq = g_qq;
-        this.g_email = g_email;
         this.g_content = g_content;
         this.g_reply = g_reply;
-        this.g_imageAddress = g_imageAddress;
         this.g_posttime = g_posttime;
         this.g_replytime = g_replytime;
+        this.t_id = t_id;
+        this.tourists = tourists;
     }
 
-    public Guest(Integer guestid) {
+    public Guest(Integer g_id) {
 
-        this.guestid = guestid;
-    }
-
-    public Guest() {
-
+        this.g_id = g_id;
     }
 }
