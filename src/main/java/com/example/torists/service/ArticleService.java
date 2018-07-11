@@ -4,7 +4,7 @@ import com.example.torists.bean.Article;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface ArticleService {
 
         /**
@@ -39,5 +39,5 @@ public interface ArticleService {
          * @param articletype_id
          * @return
          */
-        List<Article> findArticlebyarticletype_id(int articletype_id);
+
 }

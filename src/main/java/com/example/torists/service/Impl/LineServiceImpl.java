@@ -3,9 +3,10 @@ package com.example.torists.service.Impl;
 import com.example.torists.bean.Line;
 import com.example.torists.repositroy.LineReposictroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class LineServiceImpl implements LineReposictroy {
 
     @Autowired

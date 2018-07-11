@@ -4,9 +4,10 @@ import com.example.torists.bean.Hotel;
 import com.example.torists.repositroy.HotelRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.torists.service.HotelService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class HotelServiceImpl implements HotelService {
 
     @Autowired

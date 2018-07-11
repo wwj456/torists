@@ -4,7 +4,7 @@ import com.example.torists.bean.Tourists;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface TouristsService {
     /**
      * 查询全部客户

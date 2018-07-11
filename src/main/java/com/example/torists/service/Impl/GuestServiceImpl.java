@@ -4,9 +4,10 @@ import com.example.torists.bean.Guest;
 import com.example.torists.repositroy.GuestRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.torists.service.GuestService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class GuestServiceImpl implements GuestService {
 
     @Autowired

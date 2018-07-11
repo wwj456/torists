@@ -4,7 +4,7 @@ import com.example.torists.bean.Admin;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface AdminService {
     /**
      * 查询全部管理员

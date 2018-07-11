@@ -4,9 +4,10 @@ import com.example.torists.bean.Admin;
 import com.example.torists.repositroy.AdminRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.torists.service.AdminService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class AdminServiceImpl implements AdminService {
     @Autowired
     AdminRepositroy adminRepositroy;

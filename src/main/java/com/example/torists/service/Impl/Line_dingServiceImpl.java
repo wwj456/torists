@@ -4,9 +4,10 @@ import com.example.torists.bean.Line_ding;
 import com.example.torists.repositroy.Line_dingReposictroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.torists.service.Line_dingService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class Line_dingServiceImpl implements Line_dingService {
 
     @Autowired

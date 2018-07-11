@@ -4,7 +4,7 @@ import com.example.torists.bean.Line_ding;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface Line_dingService {
     /**
      * 查询全部路线订单

@@ -6,9 +6,10 @@ import com.example.torists.repositroy.AdminRepositroy;
 import com.example.torists.repositroy.ArticleRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.torists.service.ArticleService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
@@ -33,8 +34,5 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepositroy.deleteArticle(article_id);
     }
 
-    @Override
-    public List<Article> findArticlebyarticletype_id(int articletype_id) {
-        return articleRepositroy.findArticlebyarticletype_id(articletype_id);
-    }
+
 }
