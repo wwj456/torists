@@ -1,4 +1,4 @@
-package service.Impl;
+package com.example.torists.service.Impl;
 
 import com.example.torists.bean.Line;
 import com.example.torists.repositroy.LineReposictroy;

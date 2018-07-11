@@ -1,9 +1,10 @@
-package service;
+package com.example.torists.service;
 
 import com.example.torists.bean.Scenicspot;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface ScenicspotService {
     /**
      * 查询全部景点

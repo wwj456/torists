@@ -1,9 +1,9 @@
-package service.Impl;
+package com.example.torists.service.Impl;
 
 import com.example.torists.bean.Tourists;
 import com.example.torists.repositroy.TouristsReposictroy;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.TouristsService;
+import com.example.torists.service.TouristsService;
 
 import java.util.List;
 

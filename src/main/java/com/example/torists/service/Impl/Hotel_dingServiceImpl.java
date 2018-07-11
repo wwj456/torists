@@ -1,9 +1,9 @@
-package service.Impl;
+package com.example.torists.service.Impl;
 
 import com.example.torists.bean.Hotel_ding;
 import com.example.torists.repositroy.Hotel_dingRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.Hotel_dingService;
+import com.example.torists.service.Hotel_dingService;
 
 import java.util.List;
 

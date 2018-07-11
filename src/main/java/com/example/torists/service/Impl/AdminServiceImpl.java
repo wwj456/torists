@@ -1,9 +1,9 @@
-package service.Impl;
+package com.example.torists.service.Impl;
 
 import com.example.torists.bean.Admin;
 import com.example.torists.repositroy.AdminRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.AdminService;
+import com.example.torists.service.AdminService;
 
 import java.util.List;
 

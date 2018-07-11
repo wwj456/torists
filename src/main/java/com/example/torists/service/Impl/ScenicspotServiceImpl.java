@@ -1,4 +1,4 @@
-package service.Impl;
+package com.example.torists.service.Impl;
 
 import com.example.torists.bean.Scenicspot;
 import com.example.torists.repositroy.ScenicspotRepositroy;

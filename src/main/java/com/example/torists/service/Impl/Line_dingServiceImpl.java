@@ -1,9 +1,9 @@
-package service.Impl;
+package com.example.torists.service.Impl;
 
 import com.example.torists.bean.Line_ding;
 import com.example.torists.repositroy.Line_dingReposictroy;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.Line_dingService;
+import com.example.torists.service.Line_dingService;
 
 import java.util.List;
 

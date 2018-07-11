@@ -1,9 +1,10 @@
-package service;
+package com.example.torists.service;
 
 import com.example.torists.bean.Hotel_ding;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface Hotel_dingService {
         /**
          * 查询酒店订单

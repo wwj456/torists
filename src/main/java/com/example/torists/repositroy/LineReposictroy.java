@@ -2,6 +2,7 @@ package com.example.torists.repositroy;
 
 import com.example.torists.bean.Line;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
@@ -17,14 +18,14 @@ public interface LineReposictroy {
      * @param line
      * @return
      */
-    int addLine(Line line);
+    int addLine(@Param("l") Line line);
 
     /**
      * 修改路线
      * @param line
      * @return
      */
-    int updateLine(Line line);
+    int updateLine(@Param("l") Line line);
 
     /**
      * 删除路线

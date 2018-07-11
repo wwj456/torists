@@ -2,6 +2,7 @@ package com.example.torists.repositroy;
 
 import com.example.torists.bean.Scenicspot;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
@@ -18,14 +19,14 @@ public interface ScenicspotRepositroy {
      * @param scenicspot
      * @return
      */
-    int addScenicspot(Scenicspot scenicspot);
+    int addScenicspot(@Param("scenicspot")Scenicspot scenicspot);
 
     /**
      * 修改景点
      * @param scenicspot
      * @return
      */
-    int updateScenicspot(Scenicspot scenicspot);
+    int updateScenicspot(@Param("scenicspot") Scenicspot scenicspot);
 
     /**
      * 删除景点
