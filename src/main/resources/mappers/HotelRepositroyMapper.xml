@@ -21,10 +21,10 @@
             </association>
         </resultMap>
     <select id="findAllHotel" resultMap="hotelResultMap">
-        select * from Hotel where hotel_id=#{hotel_id}
+        select * from hotel where hotel_id=#{hotel_id}
     </select>
     <update id="updateHotel">
-        update Hotel set hoteld_name = #{h.hotel_name}
+        update hotel set hoteld_name = #{h.hotel_name}
                              ,hotel_position = #{h.hotel_position}
                              ,hotel_pic = #{h.hotel_pic}
                              ,hotel_content = #{h.hotel_content}
@@ -33,10 +33,10 @@
         where hotel_id=#{h.hotel_id}
     </update>
     <insert id="addHootel">
-         insert into Hotel(hoteld_name,hotel_position,hotel_pic,hotel_content,hotel_price,order_id)
+         insert into hotel(hoteld_name,hotel_position,hotel_pic,hotel_content,hotel_price,order_id)
          values (#{h.hotel_name},#{h.hotel_position},#{h.hotel_pic},#{h.hotel_content},#{h.hotel_price},#{h.order_id})
     </insert>
     <delete id="deleteHotel">
-        delete from Hotel where hotel_id=#{h.hotel_id}
+        delete from hotel where hotel_id=#{h.hotel_id}
     </delete>
 </mapper>

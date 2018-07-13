@@ -1079,15 +1079,7 @@
 
                 <div class="check-div form-inline" style="">
                     <div class="col-lg-4 col-xs-7 col-md-6">
-                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addBuilding">添加楼宇 </button>
-                        <label for="paixu">楼宇:&nbsp;</label>
-                        <select class=" form-control">
-                            <option>第一教学楼</option>
-                            <option>逸夫楼</option>
-                            <option>综合楼</option>
-                            <option>图书馆</option>
-                        </select>
-                        <button class="btn btn-white btn-xs ">修 改</button>
+                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addBuilding">添加线路 </button>
                     </div>
                     <div class="col-lg-4 col-lg-offset-4 col-xs-4 col-md-5 " style="padding-right: 40px;text-align: right;">
                         <input type="text" class=" form-control input-sm " placeholder="输入文字搜索">
@@ -1122,8 +1114,8 @@
                                     <td class="col-xs-2">卡就发的凯撒计划</td>
                                     <td class="col-xs-2" style="padding-left: 40px!important;">50</td>
                                     <td class="col-xs-3" style="padding-left: 50px!important;">
-                                        <a class="linkCcc" href="#sitDetail" aria-controls="char" role="tab" data-toggle="tab">座位信息</a>
-                                        <a class="linkCcc" href="#time" aria-controls="char" role="tab" data-toggle="tab">时间段设置</a>
+                                        <input class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource" type="submit" value="修改线路" onclick="window.location.href='/'"/>
+                                        <input class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource" type="submit" value="删除线路" onclick="window.location.href='/'"/>
                                     </td>
                                 </tr>
 
@@ -1172,23 +1164,31 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">添加楼宇</h4>
+                                <h4 class="modal-title" id="gridSystemModalLabel">添加路线</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
                                     <form class="form-horizontal">
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">楼层：</label>
+                                            <label for="sName" class="col-xs-3 control-label">目的地：</label>
                                             <div class="col-xs-8 ">
                                                 <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="sLink" class="col-xs-3 control-label">区域：</label>
+                                            <label for="sLink" class="col-xs-3 control-label">价格：</label>
                                             <div class="col-xs-8 ">
                                                 <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="Suo" class="col-xs-3 control-label">说明：</label>
+                                            <div class="col-xs-8">
+                                                <input type="" class="form-control input-sm duiqi" id="Suo" placeholder="">
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="sOrd" class="col-xs-3 control-label">座位数：</label>
                                             <div class="col-xs-8">
