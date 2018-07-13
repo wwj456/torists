@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.torists.repositroy.LineReposictroy">
+    <resultMap id="LinepotResultMap" type="com.example.torists.bean.Line">
+        <id column="line_id" property="line_id"/>
+        <result column="line_type" property="line_type"/>
+        <result column="line_name" property="line_name"/>
+        <result column="line_shuoming" property="line_shuoming"/>
+        <result column="line_price" property="line_price"/>
+        <result column="line_pic" property="line_pic"/>
+        <result column="lined_id" property="lined_id"/>
+        <result column="line_ding" property="line_ding"/>
+    </resultMap>
+    <select id="findAllLine" resultMap="LineResultMap">
+        select * from line
+    </select>
+    <update id="updateLine">
+        update line set line_type = #{line.line_type}
+                             ,line_name = #{line.line_name}
+                             ,line_shuoming = #{line.line_shuoming}
+                             ,line_price=#{line.line_price}
+                             ,line_pic=#{line.line_pic}
+                             ,lined_id=#{line.lined_id}
+                             ,line_ding=#{line.line_ding}
+        where line_id = #{line.line_id}
+    </update>
+    <insert id="addLine">
+         insert into line(line_type,line_name,line_shuoming,line_price,line_pic,lined_id,line_ding)
+         values (#{line.line_type},#{line.line_name}#{line.line_shuoming},#{line.line_price}，#{line.line_pic}，#{line.lined_id}，#{line.line_ding})
+    </insert>
+    <delete id="deleteLine">
+        delete from line where line_id = #{line.line_id}
+    </delete>
+</mapper>
+

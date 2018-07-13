@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.torists.repositroy.ScenicspotRepositroy">
+<<<<<<< HEAD
     <resultMap id="scenicspotResultMap" type="com.example.torists.bean.Scenicspot">
         <id column="scenicspot_id" property="scenicspot_id"/>
         <result column="scenicspot_name" property="scenicspot_name"/>
@@ -31,6 +32,29 @@
     </insert>
     <delete id="deleteScenicspot">
         delete from line where scenicspot_id = #{s.scenicspot_id}
+=======
+    <resultMap id="ScenicspotResultMap" type="com.example.torists.bean.Scenicspot">
+        <id column="scenicspot_id" property="scenicspot_id"/>
+        <result column="scenicspot_name" property="scenicspot_name"/>
+        <result column="scenicspot_content" property="scenicspot_content"/>
+        <result column="scenicspot_pic" property="scenicspot_pic"/>
+    </resultMap>
+    <select id="findAllScenicspot" resultMap="ScenicspotResultMap">
+        select * from scenics
+    </select>
+    <update id="updateScenicspot">
+        update scenics set scenicspot_name = #{scenics.scenicspot_name}
+                             ,scenicspot_content = #{scenics.scenicspot_content}
+                             ,scenicspot_pic = #{scenics.scenicspot_pic}
+        where scenicspot_id = #{tourists.t_id}
+    </update>
+    <insert id="addScenicspot">
+         insert into scenics(scenicspot_name,scenicspot_content,scenicspot_pic)
+         values (#{scenics.scenicspot_name},#{scenics.scenicspot_content}#{scenics.scenicspot_pic})
+    </insert>
+    <delete id="deleteScenicspot">
+        delete from scenics where scenicspot_id = #{scenics.order_id}
+>>>>>>> a4b4dceb2878f7966fe0202ead3cb576a97bd777
     </delete>
 </mapper>
 

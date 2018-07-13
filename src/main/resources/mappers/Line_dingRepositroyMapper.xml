@@ -3,39 +3,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.torists.repositroy.Line_dingReposictroy">
-    <resultMap id="line_dingResultMap" type="com.example.torists.bean.Line_ding">
+    <resultMap id="Line_dingResultMap" type="com.example.torists.bean.Line_ding">
         <id column="lined_id" property="lined_id"/>
         <result column="lined_name" property="lined_name"/>
-        <result column="lined_chfaplace" property="lined_chfaplace"/>
         <result column="lined_jointime" property="lined_jointime"/>
-        <result column="lined_dhotel" property="lined_dhotel"/>
-        <result column="l_name" property="l_name"/>
-        <result column="l_tel" property="l_tel"/>
-        <result column="l_conten" property="l_conten"/>
-        <result column="admin_action" property="admin_action"/>
-        <result column="add_date" property="add_date"/>
-        <result column="line_id" property="line_id"/>
+        <result column="line_shuoming" property="line_shuoming"/>
+        <result column="line_price" property="line_price"/>
+        <result column="line_pic" property="line_pic"/>
+        <result column="lined_id" property="lined_id"/>
+        <result column="line_ding" property="line_ding"/>
     </resultMap>
-    <select id="findAllLine_ding" resultMap="line_dingResultMap">
-        select * from line_ding where lined_id=#{lined_id}
+    <select id="findAllLine_ding" resultMap="Line_dingResultMap">
+        select * from line_ding
     </select>
-    <update id="updateHotel_ding">
-        update line_ding set lined_name = #{l_d.lined_name}
-                             ,lined_chfaplace = #{l_d.lined_chfaplace}
-                             ,lined_jointime = #{l_d.lined_jointime}
-                             ,lined_dhotel = #{l_d.lined_dhotel}
-                             ,l_name = #{l_d.l_name}
-                             ,l_tel = #{l_d.l_tel}
-                             ,l_conten = #{l_d.l_conten}
-                             ,admin_action=#{l_d.admin_action}
-                             ,line_id=#{l_d.line_id}
-        where lined_id = #{l_d.lined_id}
+    <update id="updateLine_ding">
+        update line_ding set lined_name = #{ld.lined_name}
+                             ,line_name = #{ld.line_name}
+                             ,lined_jointime = #{ld.lined_jointime}
+                             ,t_id=#{ld.t_id}
+        where lined_id = #{ld.lined_id}
     </update>
     <insert id="addLine_ding">
-         insert into line_ding(lined_name,lined_chfaplace,lined_jointime,lined_dhotel,l_name,l_tel,l_conten,admin_action,line_id,)
-         values (#{l_d.lined_name},#{l_d.lined_chfaplace},#{l_d.lined_jointime},#{l_d.lined_dhotel},#{l_d.l_name},#{l_d.l_tel},#{l_d.l_conten},l_d.admin_action,#{l_d.line_id})
+         insert into line_ding(lined_name,lined_jointime,t_id)
+         values (#{ld.lined_name},#{ld.lined_jointime}#{ld.t_id})
     </insert>
-    <delete id="deleteHotel_ding">
-        delete from line_ding where lined_id=#{l_d.lined_id}
+    <delete id="deleteLine_ding">
+        delete from line_ding where lined_id = #{ld.lined_id}
     </delete>
 </mapper>
+

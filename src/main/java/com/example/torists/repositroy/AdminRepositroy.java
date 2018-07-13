@@ -2,6 +2,7 @@ package com.example.torists.repositroy;
 
 import com.example.torists.bean.Admin;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
@@ -17,20 +18,20 @@ public interface AdminRepositroy {
      * @param admin
      * @return
      */
-    int addAdmin(Admin admin);
+    int addAdmin(@Param("admin") Admin admin);
 
     /**
      * 修改管理员
      * @param admin
      * @return
      */
-    int updateAdmin(Admin admin);
+    int updateAdmin(@Param("admin")Admin admin);
 
     /**
      * 删除管理员
      * @param id
      * @return
      */
-    int deleteAdmin(Integer id);
+    int deleteAdmin(@Param("admin")Integer id);
 
 }

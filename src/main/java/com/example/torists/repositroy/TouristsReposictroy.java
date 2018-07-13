@@ -2,7 +2,6 @@ package com.example.torists.repositroy;
 
 import com.example.torists.bean.Tourists;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
@@ -19,19 +18,19 @@ public interface TouristsReposictroy {
      * @param tourists
      * @return
      */
-    int addTourists(@Param("tou") Tourists tourists);
+    int addTourists(Tourists tourists);
 
     /**
      * 修改客户
      * @param tourists
      * @return
      */
-    int updateTourists(@Param("tou")Tourists tourists);
+    int updateTourists(Tourists tourists);
 
     /**
      * 删除客户
      * @param t_id
      * @return
      */
-    int deleteTourists(@Param("tou")int t_id);
+    int deleteTourists(int t_id);
 }

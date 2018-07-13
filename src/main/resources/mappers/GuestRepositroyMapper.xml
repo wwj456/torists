@@ -6,28 +6,49 @@
     <resultMap id="guestResultMap" type="com.example.torists.bean.Guest">
         <id column="guestid" property="guestid"/>
         <result column="g_username" property="g_username"/>
-        <result column="g_userfrom" property="g_userfrom"/>
         <result column="g_sex" property="g_sex"/>
-        <result column="g_qq" property="g_qq"/>
-        <result column="g_email" property="g_email"/>
         <result column="g_content" property="g_content"/>
         <result column="g_reply" property="g_reply"/>
-        <result column="g_imageAddress" property="g_imageAddress"/>
         <result column="g_posttime" property="g_posttime"/>
         <result column="g_replytime" property="g_replytime"/>
+        <result column="t_id" property="t_id"/>
+        <association property="tourists" javaType="com.example.torists.bean.Tourists">
+            <id column="t_id" property="t_id"/>
+            <result column="t_name" property="t_name"/>
+            <result column="t_tel" property="t_tel"/>
+            <result column="t_icd" property="t_icd"/>
+        </association>
     </resultMap>
     <select id="findAllGuest" resultMap="aguestResultMap">
         select * from guest where guestid=#{guestid}
     </select>
     <update id="updateGuest">
-        update guest set g_username=#{guest.guest.g_username},g_userfrom=#{guest.g_userfrom},g_sex=#{guest.g_sex},g_qq=#{guest.g_qq},g_email=#{guest.g_email},g_content=#{guest.g_content},g_reply=#{guest.g_reply},g_imageAddress=#{guest.g_imageAddress},g_posttime=#{guest.g_posttime},g_replytime=#{guest.g_replytime}
-        where guestid=#{guest.guestid}
+        update guest set g_username=#{g.guest.g_username}
+        ,g_sex=#{g.g_sex}
+        ,g_content=#{guest.g_content}
+        ,g_reply=#{guest.g_reply}
+        ,g_posttime=#{g.g_posttime}
+        ,g_replytime=#{g.g_replytime}
+        ,t_id=#{g.t_id}
+        where guestid=#{g.guestid}
     </update>
     <insert id="addGuest">
-         insert into guest(g_username,g_userfrom,g_sex,g_qq,g_email,g_content,g_reply,g_imageAddress,g_posttime,g_replytime)
-         values (#{guest.guest.g_username},#{guest.g_userfrom},#{guest.g_sex},#{guest.g_qq},#{guest.g_email},#{guest.g_content},#{guest.g_reply},#{guest.g_imageAddress},#{guest.g_posttime},#{guest.g_replytime})
+         insert into guest(g_username
+         ,g_sex
+         ,g_content
+         ,g_reply
+         ,g_posttime
+         ,g_replytime
+         ,t_id)
+         values (#{g.guest.g_username}
+         ,#{g.g_sex}
+         ,#{g.g_content}
+         ,#{g.g_reply}
+         ,#{g.g_posttime}
+         ,#{g.g_replytime
+         ,#{g.t_id})
     </insert>
     <delete id="deleteGuest">
-        delete from guest where guestid=#{guestid.guestid}
+        delete from guest where guestid=#{g.guestid}
     </delete>
 </mapper>
