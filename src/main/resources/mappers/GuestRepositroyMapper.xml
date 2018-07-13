@@ -20,7 +20,7 @@
         </association>
     </resultMap>
     <select id="findAllGuest" resultMap="aguestResultMap">
-        select * from guest where guestid=#{guestid}
+        select * from guest
     </select>
     <update id="updateGuest">
         update guest set g_username=#{g.guest.g_username}

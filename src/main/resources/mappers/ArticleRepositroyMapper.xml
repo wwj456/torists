@@ -10,7 +10,7 @@
         <result column="add_date" property="add_date"/>
     </resultMap>
     <select id="findAllArticle" resultMap="articleResultMap">
-        select * where article_id=#{article_id}
+        select * from article
     </select>
     <insert id="addArticle" parameterType="com.example.torists.bean.Article">
         insert into article(article_title,articel_content,add_date)

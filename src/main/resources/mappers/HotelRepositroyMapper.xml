@@ -21,7 +21,7 @@
             </association>
         </resultMap>
     <select id="findAllHotel" resultMap="hotelResultMap">
-        select * from hotel where hotel_id=#{hotel_id}
+        select * from hotel
     </select>
     <update id="updateHotel">
         update hotel set hoteld_name = #{h.hotel_name}
